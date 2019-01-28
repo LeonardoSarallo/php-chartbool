@@ -5,7 +5,7 @@ $(document).ready(function() {
     success: function(data)
     {
       var database = JSON.parse(data);
-      print(database);
+      printline(database);
     },
     error: function(err)
     {
@@ -17,7 +17,7 @@ $(document).ready(function() {
 });
 
 
-function print(database)
+function printline(database)
 {   var mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
     var ctx = $('.linechart');
     var chart = new Chart(ctx, {
@@ -36,6 +36,21 @@ function print(database)
         },
 
     });
+}
+
+
+function printpie() {
+  var myPieChart = new Chart($('.piechart'), {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: arrayAmounts,
+              backgroundColor: ['red','yellow','violet','blue']
+          }],
+          labels: arrayLabels
+
+      }
+  });
 }
 
 

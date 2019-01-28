@@ -17,11 +17,16 @@
       <canvas class="linechart" data-database="<?php echo $database; ?>"></canvas>
     </div> -->*/ ?>
 
-    
+
     <div class="container">
 
       <canvas class="linechart"></canvas>
     </div>
+
+    <div class="container">
+
+      <canvas class="piechart"></canvas>
+    </div
 
 
 

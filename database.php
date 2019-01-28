@@ -4,3 +4,11 @@
 
   $database = json_encode($database);
   echo $database;
+
+  include 'data.php'
+
+  $dataname = json_encode($label);
+  $datapie = json_decode($data);
+
+
+?>
