@@ -37,6 +37,7 @@ $(document).ready(function() {
     {
       var resultsmls3 = JSON.parse(data);
       console.log(resultsmls3);
+      printlineml3(resultsmls3);
     },
     error: function(err)
     {
@@ -119,6 +120,96 @@ function printpie(results) {
       }
   });
 }
+
+
+
+function printlineml3(resultsmls3)
+{
+  var dataml3t1 = resultsmls3['team_efficiency']['data']['Team1'];
+  var dataml3t2 = resultsmls3['team_efficiency']['data']['Team2'];
+  var dataml3t3 = resultsmls3['team_efficiency']['data']['Team3'];
+  console.log(dataml3t1);
+  console.log(dataml3t2);
+  console.log(dataml3t3);
+
+  new Chart(document.getElementById("linechartml3"), {
+  type: 'line',
+  data: {
+    labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
+    datasets: [{
+        data: dataml3t1,
+        borderColor: "#3e95cd",
+      }, {
+        data: dataml3t2,
+        borderColor: "#8e5ea2",
+      }, {
+        data: dataml3t3,
+        borderColor: "#3cba9f",
+      },
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'World population per region (in millions)'
+    }
+  }
+});
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+//    var ctx = $('.linechartml3');
+//    var chart = new Chart(ctx, {
+//        // The type of chart we want to create
+//        type: 'line',
+//
+//        // The data for our dataset
+//        data: {
+//            labels: mesi,
+//            datasets: [{
+//                label: "Vendite",
+//                backgroundColor: 'rgb(255, 99, 132)',
+//                borderColor: 'rgb(255, 99, 132)',
+//                data: dataml1,
+//            }]
+//        },
+//
+//    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
