@@ -16,6 +16,12 @@
       <?php include 'database.php' ?>;
       <canvas class="linechart" data-database="<?php echo $database; ?>"></canvas>
     </div> -->*/ ?>
+    <?php
+    $data = $_GET[‘level’];
+
+    if ($data == 'guest')
+
+    ?>
 
 
     <div class="container">

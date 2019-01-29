@@ -1,34 +1,34 @@
 $(document).ready(function() {
-  $.ajax({
-    url: 'http://localhost/php-chartbool/server.php',
-    method: 'GET',
-    success: function(data)
-    {
-      var database = JSON.parse(data);
-      printline(database);
-    },
-    error: function(err)
-    {
-      alert('si è verificato un errore');
-    }
-
-  });
-
-  $.ajax({
-    url: 'http://localhost/php-chartbool/server2.php',
-    method: 'GET',
-    success: function(data)
-    {
-      var results = JSON.parse(data);
-      printlineml2data(results);
-      printpie(results);
-    },
-    error: function(err)
-    {
-      alert('si è verificato un errore');
-    }
-
-  });
+  // $.ajax({
+  //   url: 'http://localhost/php-chartbool/server.php',
+  //   method: 'GET',
+  //   success: function(data)
+  //   {
+  //     var database = JSON.parse(data);
+  //     printline(database);
+  //   },
+  //   error: function(err)
+  //   {
+  //     alert('si è verificato un errore');
+  //   }
+  //
+  // });
+  //
+  // $.ajax({
+  //   url: 'http://localhost/php-chartbool/server2.php',
+  //   method: 'GET',
+  //   success: function(data)
+  //   {
+  //     var results = JSON.parse(data);
+  //     printlineml2data(results);
+  //     printpie(results);
+  //   },
+  //   error: function(err)
+  //   {
+  //     alert('si è verificato un errore');
+  //   }
+  //
+  // });
 
   $.ajax({
     url: 'http://localhost/php-chartbool/server3.php',
