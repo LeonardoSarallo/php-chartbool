@@ -25,7 +25,9 @@
       <canvas class="linechartml2"></canvas>
       <canvas class="piechartml2"></canvas>
       <h1>Milestone 3</h1>
-      <canvas id="linechartml3"></canvas>
+      <canvas class="linechartml3"></canvas>
+      <canvas class="piechartml3"></canvas>
+      <canvas id="linechartteamml3"></canvas>
 
     </div>
 

@@ -38,6 +38,8 @@ $(document).ready(function() {
       var resultsmls3 = JSON.parse(data);
       console.log(resultsmls3);
       printlineml3(resultsmls3);
+      pieml3(resultsmls3);
+      printlineteamml3(resultsmls3);
     },
     error: function(err)
     {
@@ -123,16 +125,16 @@ function printpie(results) {
 
 
 
-function printlineml3(resultsmls3)
+function printlineteamml3(resultsmls3)
 {
   var dataml3t1 = resultsmls3['team_efficiency']['data']['Team1'];
   var dataml3t2 = resultsmls3['team_efficiency']['data']['Team2'];
   var dataml3t3 = resultsmls3['team_efficiency']['data']['Team3'];
-  console.log(dataml3t1);
-  console.log(dataml3t2);
-  console.log(dataml3t3);
+  // console.log(dataml3t1);
+  // console.log(dataml3t2);
+  // console.log(dataml3t3);
 
-  new Chart(document.getElementById("linechartml3"), {
+  new Chart(document.getElementById("linechartteamml3"), {
   type: 'line',
   data: {
     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
@@ -161,11 +163,56 @@ function printlineml3(resultsmls3)
 }
 
 
+function printlineml3(resultsmls3)
+{
+  var dataml3 = resultsmls3['fatturato']['data'];
+
+  var mesi = ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']
+     var ctx = $('.linechartml3');
+     var chart = new Chart(ctx, {
+         // The type of chart we want to create
+         type: 'line',
+
+         // The data for our dataset
+         data: {
+             labels: mesi,
+             datasets: [{
+                 label: "Vendite",
+                 backgroundColor: 'rgb(255, 99, 132)',
+                 borderColor: 'rgb(255, 99, 132)',
+                 data: dataml3,
+             }]
+         },
+
+     });
+}
 
 
 
+function pieml3(resultsmls3)
+{
+  var datapieml3 = resultsmls3['fatturato_by_agent']['data'];
+
+  var nomiagenti = [];
+  var resultspieml3 = [];
+  for (var nomeagente in datapieml3) {
+    nomiagenti.push(nomeagente);
+    resultspieml3.push(datapieml3[nomeagente]);
+  }
 
 
+  var myPieChart = new Chart($('.piechartml3'), {
+      type: 'pie',
+      data: {
+          datasets: [{
+              data: resultspieml3,
+              backgroundColor: ['red','yellow','violet','blue']
+          }],
+          labels: nomiagenti
+
+      }
+  });
+}
 
 
 
