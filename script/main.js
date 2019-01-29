@@ -138,12 +138,15 @@ function printlineml3(resultsmls3)
     labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
     datasets: [{
         data: dataml3t1,
+        label: "Team 1",
         borderColor: "#3e95cd",
       }, {
         data: dataml3t2,
+        label: "Team 2",
         borderColor: "#8e5ea2",
       }, {
         data: dataml3t3,
+        label: "Team 3",
         borderColor: "#3cba9f",
       },
     ]
@@ -151,7 +154,7 @@ function printlineml3(resultsmls3)
   options: {
     title: {
       display: true,
-      text: 'World population per region (in millions)'
+      text: 'fatturato per team'
     }
   }
 });
