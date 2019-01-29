@@ -19,14 +19,19 @@
 
 
     <div class="container">
-
+      <h1>Milestone1</h1>
       <canvas class="linechart"></canvas>
+      <h1>Milestone2</h1>
+      <canvas class="linechartml2"></canvas>
+      <canvas class="piechartml2"></canvas>
+      <h1>Milestone 3</h1>
+      <canvas class="linechartml3"></canvas>
+    
     </div>
 
-    <div class="container">
 
-      <canvas class="piechart"></canvas>
-    </div
+
+
 
 
 
